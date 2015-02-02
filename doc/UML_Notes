@@ -1,0 +1,12 @@
+ClaimList:
+
+Models a set a claims. This list stores all the records and is used across the entire app.
+Each Claim is stored as an element inside ClaimList's private variable "claims" ArrayList<Claim> 
+
+Claim:
+
+Models a claim travel claim. It records a description of the trip, current status of the claim ,the start date and end date of the trip. It also has a list contains all the expense belong to the claim.
+
+Expense
+
+Models one single expense inside a claim. It contains date, category, description, amount spent and the curreny unit. 
