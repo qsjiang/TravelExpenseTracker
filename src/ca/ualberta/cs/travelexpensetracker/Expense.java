@@ -64,4 +64,14 @@ public class Expense {
 	public String getName(){
 		return name;
 	}
+	
+	public int compareTo(Expense other){
+		if(this.date<other.date){
+			return -1;
+		}
+		if (this.date==other.date){
+			return 0;
+		}
+		return 1;
+	}	
 }

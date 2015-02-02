@@ -1,6 +1,8 @@
 package ca.ualberta.cs.travelexpensetracker;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.GregorianCalendar;
 
 
@@ -39,6 +41,18 @@ public class Claim {
 	
 	public void addExpense(Expense expense){
 		this.expenseList.add(expense);
+		Collections.sort(expenseList, new Comparator<Expense>() {
+	        @Override
+	        public int compare(Expense  expense1, Expense  expense2){
+	        	if (expense1.getDate()<expense2.getDate()){
+	        		return -1;
+	        	}
+	        	if (expense1.getDate()>expense2.getDate()){
+	        		return 1;
+	        	}
+	        	return 0;
+	        }
+	    });		
 	}
 	public void removeExpense(Expense expense){
 		this.expenseList.remove(expense);
@@ -92,6 +106,7 @@ public class Claim {
 	public String getName() {
 		return name;
 	}
+	
 		
 }
 
