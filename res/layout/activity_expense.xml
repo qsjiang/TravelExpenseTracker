@@ -129,4 +129,24 @@
         android:onClick="expenseDeleteButtonAction"
         android:text="@string/delete" />
 
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/expenseDescriptionET"
+        android:layout_below="@+id/expenseDescriptionET"
+        android:text="@string/title_for_displaying"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/expenseNameET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/expenseDescriptionET"
+        android:layout_below="@+id/textView6"
+        android:ems="10"
+        android:hint="@string/title"
+        android:inputType="" />
+
 </RelativeLayout>

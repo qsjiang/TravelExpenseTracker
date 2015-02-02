@@ -42,6 +42,9 @@ public class ClaimActivity extends Activity {
 		EditText updateDescriptionET = (EditText)findViewById(R.id.updateDescriptionET);
 		updateDescriptionET.setText(targetClaim.getDescription());
 		
+		EditText updateNameET = (EditText)findViewById(R.id.updateNameET);
+		updateNameET.setText(targetClaim.getName());
+		
 		//link click event on list view items
 		ListView expenseLV = (ListView) findViewById(R.id.expenseLV);
 		expenseLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -106,6 +109,7 @@ public class ClaimActivity extends Activity {
 		int startDate = 0;
 		int endDate = 0;
 		String description;
+		String name;
 		EditText startDateET = (EditText)findViewById(R.id.updateStartDateET);
 		
 		if (!startDateET.getText().toString().trim().equals("")){
@@ -118,12 +122,14 @@ public class ClaimActivity extends Activity {
 		EditText descriptionET = (EditText)findViewById(R.id.updateDescriptionET);
 		description = descriptionET.getText().toString();
 		
+		EditText updateNameET=(EditText)findViewById(R.id.updateNameET);
+		name =updateNameET.getText().toString();
 		
 		if ((Integer.toString(startDate).length()!=8) ||
 				(Integer.toString(endDate).length()!=8)){
 			Toast.makeText(this, "Wrong date formate. Expecting YYYYMMDD", Toast.LENGTH_SHORT).show();		
 		}else{
-			targetClaim.editClaim(startDate, endDate, description);
+			targetClaim.editClaim(startDate, endDate, description,name);
 			Toast.makeText(this, "Successfully Updated", Toast.LENGTH_LONG).show();	
 		}
 	}

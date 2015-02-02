@@ -44,12 +44,14 @@ public class ExpenseActivity extends Activity {
 		EditText expenseAmountET = (EditText)findViewById(R.id.expenseAmountET);
 		EditText expenseUnitET = (EditText)findViewById(R.id.expenseUnitET);	
 		EditText expenseDescriptionET = (EditText)findViewById(R.id.expenseDescriptionET);
+		EditText expenseNameET = (EditText)findViewById(R.id.expenseNameET);
 		
 		expnseDateET.setText(Integer.toString(targetExpense.getDate()));
 		expenseCategoryET.setText((targetExpense.getCategory()));
 		expenseAmountET.setText(Float.toString(targetExpense.getAmount()));
 		expenseUnitET.setText((targetExpense.getUnit()));
 		expenseDescriptionET.setText((targetExpense.getDescription()));
+		expenseNameET.setText(targetExpense.getName());
 	}
 
 
@@ -88,6 +90,7 @@ public class ExpenseActivity extends Activity {
 		float amount=0;
 		String unit;
 		String description;
+		String name;
 		EditText expnseDateET = (EditText)findViewById(R.id.expnseDateET);
 		
 		if (!expnseDateET.getText().toString().trim().equals("")){
@@ -109,6 +112,10 @@ public class ExpenseActivity extends Activity {
 		
 		EditText expenseDescriptionET = (EditText)findViewById(R.id.expenseDescriptionET);
 		description = expenseDescriptionET.getText().toString();
+		
+		EditText expenseNameET = (EditText)findViewById(R.id.expenseNameET);
+		name = expenseNameET.getText().toString();	
+		
 		if (Integer.toString(date).length()!=8){
 			//a correct date needs total 8 characters
 			//Right now the program doesn't check situation where MM is greater than 12 or day is greater than 31
@@ -116,7 +123,7 @@ public class ExpenseActivity extends Activity {
 			//another planet where a year contains more than 12 months..
 			Toast.makeText(this, "Wrong date formate. Expecting YYYYMMDD", Toast.LENGTH_SHORT).show();		
 		}else{		
-			targetExpense.editExpense(date,Category,description,amount,unit);	
+			targetExpense.editExpense(date,Category,description,amount,unit,name);	
 			Toast.makeText(this, "Expense Record Updated", Toast.LENGTH_SHORT).show();			
 		}
 	}
@@ -126,6 +133,7 @@ public class ExpenseActivity extends Activity {
 		float amount=0;
 		String unit;
 		String description;
+		String name;
 		EditText expnseDateET = (EditText)findViewById(R.id.expnseDateET);
 		
 		if (!expnseDateET.getText().toString().trim().equals("")){
@@ -148,6 +156,9 @@ public class ExpenseActivity extends Activity {
 		EditText expenseDescriptionET = (EditText)findViewById(R.id.expenseDescriptionET);
 		description = expenseDescriptionET.getText().toString();
 		
+		EditText expenseNameET = (EditText)findViewById(R.id.expenseNameET);
+		name = expenseNameET.getText().toString();		
+		
 		if (Integer.toString(date).length()!=8){
 			//a correct date needs total 8 characters
 			//Right now the program doesn't check situation where MM is greater than 12 or day is greater than 31
@@ -155,7 +166,7 @@ public class ExpenseActivity extends Activity {
 			//another planet where a year contains more than 12 months..
 			Toast.makeText(this, "Wrong date formate. Expecting YYYYMMDD", Toast.LENGTH_SHORT).show();		
 		}else{
-			targetClaim.addExpense(new Expense(date,Category,description,amount,unit));
+			targetClaim.addExpense(new Expense(date,Category,description,amount,unit,name));
 			this.finish();	
 		}
 	}

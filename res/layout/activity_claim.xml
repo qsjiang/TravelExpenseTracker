@@ -97,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/addExpenseButton"
         android:layout_alignLeft="@+id/addExpenseButton"
-        android:layout_below="@+id/updateDescriptionET" >
+        android:layout_below="@+id/updateNameET" >
 
     </ListView>
 
@@ -131,5 +131,25 @@
         android:layout_toRightOf="@+id/updateClaimButton"
         android:onClick="deleteClaimButtonAction"
         android:text="@string/delete" />
+
+    <EditText
+        android:id="@+id/updateNameET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/expenseLV"
+        android:layout_below="@+id/textView4"
+        android:ems="10"
+        android:hint="@string/title"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/updateDescriptionET"
+        android:text="@string/title_for_displaying"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </RelativeLayout>

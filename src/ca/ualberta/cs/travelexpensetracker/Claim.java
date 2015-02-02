@@ -9,6 +9,7 @@ public class Claim {
 	private int endDate;
 	String status;
 	String description;
+	String name;
 	ArrayList<Expense> expenseList; 
 	
 	static final String IN_PROGRESS = "In Progress";
@@ -16,18 +17,20 @@ public class Claim {
 	static final String RETURNED = "Returned";
 	static final String APPROVED = "Approved";
 
-	public Claim(int startDate, int endDate,String description){
+	public Claim(int startDate, int endDate,String description,String name){
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.description = description;
 		this.expenseList = new ArrayList<Expense>();
 		this.status = IN_PROGRESS;
+		this.name = name;
 	}
 	
-	public void editClaim(int startDate, int endDate,String description){
+	public void editClaim(int startDate, int endDate,String description,String name){
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.description = description;
+		this.name= name;
 	}
 	
 	public ArrayList<Expense> getExpenseList(){
@@ -41,7 +44,7 @@ public class Claim {
 		this.expenseList.remove(expense);
 	}
 	public String toString(){
-		return  "["+this.status+"] "+"From: "+
+		return  "["+this.status+"] "+name+" From: "+
 				Integer.toString(this.startDate).substring(0, 4)+"/"+
 				Integer.toString(this.startDate).substring(4, 6)+"/"+
 				Integer.toString(this.startDate).substring(6, 8)+
@@ -84,6 +87,10 @@ public class Claim {
 	}
 	public void returnClaim(){
 		this.status = RETURNED;
+	}
+
+	public String getName() {
+		return name;
 	}
 		
 }

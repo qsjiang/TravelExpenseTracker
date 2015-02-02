@@ -26,6 +26,7 @@ public class ClaimCreationActivity extends Activity {
 		int startDate = 0;
 		int endDate =0;
 		String description;
+		String name;
 		EditText startDateET = (EditText)findViewById(R.id.startDateET);
 		if (!startDateET.getText().toString().trim().equals("")){
 			startDate = Integer.parseInt(startDateET.getText().toString().trim());
@@ -36,12 +37,16 @@ public class ClaimCreationActivity extends Activity {
 		}
 		EditText descriptionET = (EditText)findViewById(R.id.descriptionET);
 		description = descriptionET.getText().toString();
+
+		
+		EditText titleET =  (EditText)findViewById(R.id.titleET);
+		name = titleET.getText().toString();
 		
 		if ((Integer.toString(startDate).length()!=8) ||
 				(Integer.toString(endDate).length()!=8)){
 			Toast.makeText(this, "Wrong date formate. Expecting YYYYMMDD", Toast.LENGTH_SHORT).show();		
 		}else{
-			Claim newClaim = new Claim(startDate, endDate,description);
+			Claim newClaim = new Claim(startDate, endDate,description,name);
 			ClaimListController.addClaim(newClaim);
 			
 			this.finish();

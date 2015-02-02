@@ -31,5 +31,7 @@
     <string name="welcome">Welcome</string>
     <string name="welcome_to_travel_expense_tracker">Welcome to Travel Expense Tracker</string>
     <string name="delete">Delete</string>
+    <string name="title_for_displaying">Title for Displaying</string>
+    <string name="title">Title</string>
 
 </resources>
