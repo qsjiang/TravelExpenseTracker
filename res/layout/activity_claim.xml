@@ -1,0 +1,135 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="addExpenseButtonAction"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ClaimActivity" >
+
+    <TextView
+        android:id="@+id/claimStatusTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="[Claim Status]"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/updateStartDateET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/claimStatusTV"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView1"
+        android:ems="10"
+        android:inputType="number"
+        tools:ignore="TextFields" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/updateStartDateET"
+        android:layout_below="@+id/updateStartDateET"
+        android:text="@string/end_date"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/updateEndDateET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView2"
+        android:ems="10"
+        android:inputType="number"
+        tools:ignore="TextFields" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/updateEndDateET"
+        android:layout_below="@+id/updateEndDateET"
+        android:text="@string/description"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/updateDescriptionET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView3"
+        android:ems="10"
+        tools:ignore="TextFields" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/updateStartDateET"
+        android:layout_below="@+id/claimStatusTV"
+        android:text="@string/start_date"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Button
+        android:id="@+id/addExpenseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/updateDescriptionET"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/updateDescriptionET"
+        android:onClick="addExpenseButtonAction"
+        android:text="@string/add_expense" />
+
+    <ListView
+        android:id="@+id/expenseLV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/addExpenseButton"
+        android:layout_alignLeft="@+id/addExpenseButton"
+        android:layout_below="@+id/updateDescriptionET" >
+
+    </ListView>
+
+    <Button
+        android:id="@+id/updateClaimButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/updateStartDateET"
+        android:layout_toRightOf="@+id/claimStatusTV"
+        android:onClick="updateClaimButtonAction"
+        android:text="@string/update" />
+
+    <Button
+        android:id="@+id/submitClaimButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/updateClaimButton"
+        android:layout_alignBottom="@+id/updateClaimButton"
+        android:layout_alignParentRight="true"
+        android:onClick="submitClaimButtonAction"
+        android:text="@string/submit" />
+
+    <Button
+        android:id="@+id/deleteClaimButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/updateClaimButton"
+        android:layout_alignTop="@+id/updateClaimButton"
+        android:layout_toRightOf="@+id/updateClaimButton"
+        android:onClick="deleteClaimButtonAction"
+        android:text="@string/delete" />
+
+</RelativeLayout>
